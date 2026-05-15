@@ -1,0 +1,111 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Prepare backend artifact
+        run: |
+          mkdir -p deploy/backend
+          cp package.json package-lock.json deploy/backend/
+          cp -r apps deploy/backend/apps
+          cp -r scripts deploy/backend/scripts
+          cp -r db deploy/backend/db
+          rm -rf deploy/backend/apps/frontend
+          rm -f deploy/backend/apps/backend/.env
+
+      - name: Prepare frontend artifact
+        run: |
+          mkdir -p deploy/frontend
+          cp -r apps/frontend/dist/* deploy/frontend/
+
+      - name: Upload backend artifact
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SCP_HOST }}
+          username: ${{ secrets.SCP_USER }}
+          key: ${{ secrets.SCP_SSH_KEY }}
+          port: ${{ secrets.SCP_PORT }}
+          source: "deploy/backend/*"
+          target: "/tmp/mintonmap-deploy/backend"
+          strip_components: 2
+          rm: true
+
+      - name: Upload frontend artifact
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SCP_HOST }}
+          username: ${{ secrets.SCP_USER }}
+          key: ${{ secrets.SCP_SSH_KEY }}
+          port: ${{ secrets.SCP_PORT }}
+          source: "deploy/frontend/*"
+          target: "/tmp/mintonmap-deploy/frontend"
+          strip_components: 2
+          rm: true
+
+      - name: Activate deployment
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SCP_HOST }}
+          username: ${{ secrets.SCP_USER }}
+          key: ${{ secrets.SCP_SSH_KEY }}
+          port: ${{ secrets.SCP_PORT }}
+          script_stop: true
+          script: |
+            set -e
+
+            mkdir -p /opt/mintonmap/backend/apps/backend /opt/mintonmap/frontend
+            if [ -f /opt/mintonmap/backend/apps/backend/.env ]; then
+              cp /opt/mintonmap/backend/apps/backend/.env /tmp/mintonmap-backend.env
+            fi
+
+            rm -rf /opt/mintonmap/backend /opt/mintonmap/frontend
+            mv /tmp/mintonmap-deploy/backend /opt/mintonmap/backend
+            mv /tmp/mintonmap-deploy/frontend /opt/mintonmap/frontend
+
+            if [ -f /tmp/mintonmap-backend.env ]; then
+              mkdir -p /opt/mintonmap/backend/apps/backend
+              mv /tmp/mintonmap-backend.env /opt/mintonmap/backend/apps/backend/.env
+            fi
+
+            cd /opt/mintonmap/backend
+
+            npm ci --omit=dev
+            npm run db:migrate
+
+            pm2 restart mintonmap-api || pm2 start npm --name mintonmap-api -- run start --workspace @mintonmap/backend
+            pm2 save
+
+            sudo mkdir -p /var/www/mintonmap
+            sudo rm -rf /var/www/mintonmap/*
+            sudo cp -r /opt/mintonmap/frontend/* /var/www/mintonmap/
+            sudo chown -R www-data:www-data /var/www/mintonmap
+
+            sudo nginx -t
+            sudo systemctl reload nginx

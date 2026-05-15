@@ -1,8 +1,5 @@
-import { readFile } from "node:fs/promises";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 import { z } from "zod";
-import { getPool, hasDatabaseUrl } from "../db/postgres.js";
+import { getPool } from "../db/postgres.js";
 import type { BadmintonCourt, CourtFilters, CourtRegion } from "../types.js";
 
 const courtSchema = z.object({
@@ -56,9 +53,6 @@ const courtSchema = z.object({
 
 const courtsSchema = z.array(courtSchema);
 
-const currentDir = path.dirname(fileURLToPath(import.meta.url));
-const defaultDataFile = path.resolve(currentDir, "../../../../data/courts.json");
-
 interface DbCourtRow {
   id: string;
   name: string;
@@ -88,21 +82,8 @@ interface DbCourtRow {
   photos: BadmintonCourt["photos"];
 }
 
-function getDataFilePath() {
-  if (!process.env.COURTS_DATA_FILE) {
-    return defaultDataFile;
-  }
-
-  return path.resolve(process.cwd(), process.env.COURTS_DATA_FILE);
-}
-
 export function isCourtRegion(value: unknown): value is CourtRegion {
   return value === "seoul" || value === "gyeonggi" || value === "incheon";
-}
-
-async function readCourts(): Promise<BadmintonCourt[]> {
-  const raw = await readFile(getDataFilePath(), "utf-8");
-  return courtsSchema.parse(JSON.parse(raw));
 }
 
 function rowToCourt(row: DbCourtRow): BadmintonCourt {
@@ -181,20 +162,5 @@ async function readCourtsFromPostgres(filters: CourtFilters = {}): Promise<Badmi
 }
 
 export async function listCourts(filters: CourtFilters = {}): Promise<BadmintonCourt[]> {
-  if (hasDatabaseUrl()) {
-    return readCourtsFromPostgres(filters);
-  }
-
-  const courts = await readCourts();
-  const normalizedQuery = filters.q?.trim().toLowerCase();
-
-  return courts.filter((court) => {
-    const matchesRegion = !filters.region || court.region === filters.region;
-    const matchesQuery =
-      !normalizedQuery ||
-      court.name.toLowerCase().includes(normalizedQuery) ||
-      court.address.toLowerCase().includes(normalizedQuery);
-
-    return matchesRegion && matchesQuery;
-  });
+  return readCourtsFromPostgres(filters);
 }

@@ -27,7 +27,7 @@
 - 부천도시공사: https://www.best.or.kr/
 - 디지털안산문화대전: https://ansan.grandculture.net/
 
-각 시설별 상세 URL은 `data/courts.seed.json`과 `data/courts.json`의 `sourceUrl` 필드에 들어 있다.
+각 시설별 상세 URL은 PostgreSQL seed인 `db/seed.sql`의 `source_url` 필드에 들어 있다.
 
 ## 다음 정리 대상
 

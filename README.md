@@ -8,7 +8,7 @@
 - Map: Kakao Maps JavaScript SDK
 - Backend: Node.js + Express
 - DB: PostgreSQL
-- Data seed: `data/courts.json`
+- Data seed: `db/seed.sql`
 - Deployment target: Samsung Cloud Platform Virtual Server
 
 ## 실행
@@ -30,7 +30,7 @@ npm run dev
 cp apps/frontend/.env.example apps/frontend/.env
 ```
 
-백엔드는 PostgreSQL을 쓰려면 `DATABASE_URL`을 설정합니다. `DATABASE_URL`이 없으면 개발 편의를 위해 `data/courts.json`을 fallback으로 읽습니다.
+백엔드는 PostgreSQL을 데이터 소스로 사용하므로 `DATABASE_URL` 설정이 필요합니다.
 
 ```bash
 cp apps/backend/.env.example apps/backend/.env
@@ -62,21 +62,6 @@ npm run db:seed
 
 - `badminton_courts`: 배드민턴장 기본 정보, 좌표, 운영시간, 요금, 출처
 - `court_photos`: 배드민턴장별 사진/커버 이미지
-
-## 데이터 갱신
-
-서울시 생활체육포털과 KSPO 공개 CSV를 다시 가져오고 기본 커버 사진을 채웁니다.
-
-```bash
-npm run data:refresh
-```
-
-Kakao Local API 한도에 여유가 있을 때는 추가 키워드 수집을 실행할 수 있습니다.
-
-```bash
-npm run data:import:kakao
-npm run data:photos
-```
 
 ## 사진 데이터
 
