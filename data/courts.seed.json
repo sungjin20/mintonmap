@@ -1,0 +1,690 @@
+[
+  {
+    "id": "seoul-gangbuk-odong-badminton",
+    "name": "오동근린공원 실내배드민턴장",
+    "region": "seoul",
+    "district": "강북구",
+    "address": "서울특별시 강북구 덕릉로42길 49",
+    "phone": "02-944-2931",
+    "courtCount": 8,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "샤워실",
+      "탈의실",
+      "휴게실",
+      "사물함"
+    ],
+    "hours": "주중 06:00-21:00",
+    "parking": "주차 가능 15면",
+    "source": "official",
+    "sourceName": "서울시 생활체육포털",
+    "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=757",
+    "reservationUrl": "https://www.gbcmc.or.kr/fmcs/83",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "서울시 생활체육포털",
+      "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=757"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "오동근린공원 실내배드민턴장 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "seoul-gangseo-magok-badminton",
+    "name": "마곡레포츠센터 실내배드민턴장",
+    "region": "seoul",
+    "district": "강서구",
+    "address": "서울특별시 강서구 양천로 251",
+    "phone": "02-2063-3990",
+    "courtCount": 14,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "샤워실",
+      "탈의실",
+      "체온조절실",
+      "구내매점",
+      "휴게실",
+      "관람석"
+    ],
+    "hours": "주중 06:00-22:00 / 토요일 06:00-18:00 / 일요일 09:00-17:00",
+    "parking": "주차 가능 136면",
+    "source": "official",
+    "sourceName": "서울시 생활체육포털",
+    "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=693",
+    "reservationUrl": "https://sport.gssi.or.kr/page/sisul/06/",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "서울시 생활체육포털",
+      "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=693"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "마곡레포츠센터 실내배드민턴장 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "seoul-gwanak-miseong-gym",
+    "name": "미성체육관",
+    "region": "seoul",
+    "district": "관악구",
+    "address": "서울특별시 관악구 난우16길 37",
+    "phone": "02-2015-2765",
+    "courtCount": 8,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "샤워실",
+      "탈의실",
+      "스포츠용품점",
+      "매점"
+    ],
+    "hours": "주중 06:00-22:00 / 주말 06:00-22:00",
+    "parking": "주차 가능 15면",
+    "source": "official",
+    "sourceName": "서울시 생활체육포털",
+    "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=734",
+    "reservationUrl": "https://booking.gwanakgongdan.or.kr/booking/1561",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "서울시 생활체육포털",
+      "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=734"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "미성체육관 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "seoul-guro-nuri-badminton",
+    "name": "구로누리배드민턴장",
+    "region": "seoul",
+    "district": "구로구",
+    "address": "서울특별시 구로구 새말로18길 39",
+    "phone": "02-2066-3002",
+    "courtCount": 7,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "샤워실",
+      "탈의실",
+      "배드민턴용품점"
+    ],
+    "hours": "주중 06:00-22:00 / 주말 10:00-18:00 / 일요일·공휴일 휴관",
+    "parking": "주차 가능 20면",
+    "source": "official",
+    "sourceName": "서울시 생활체육포털",
+    "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=646",
+    "reservationUrl": "https://www.guro.go.kr/www/contents.do?key=2943",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "서울시 생활체육포털",
+      "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=646"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "구로누리배드민턴장 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "seoul-geumcheon-doksan-badminton",
+    "name": "독산배드민턴체육관",
+    "region": "seoul",
+    "district": "금천구",
+    "address": "서울특별시 금천구 독산로54길 102-82",
+    "phone": "070-8670-1823",
+    "courtCount": 9,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "탈의실"
+    ],
+    "hours": "주중 06:00-21:00 / 주말 07:00-19:00",
+    "parking": "주차 가능",
+    "source": "official",
+    "sourceName": "서울시 생활체육포털",
+    "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=673",
+    "reservationUrl": "https://b.gfmc.kr/index.php",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "서울시 생활체육포털",
+      "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=673"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "독산배드민턴체육관 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "seoul-mapo-mangwon-badminton",
+    "name": "망원동 배드민턴장",
+    "region": "seoul",
+    "district": "마포구",
+    "address": "서울특별시 마포구 동교로1길 73",
+    "phone": "02-300-5073",
+    "courtCount": 0,
+    "courtCountStatus": "unknown",
+    "latitude": 37.5535497,
+    "longitude": 126.9000221,
+    "facilities": [],
+    "hours": "주중 05:00-22:00 / 주말 동절기 1시간 늦게 오픈",
+    "parking": "주차 불가",
+    "source": "official",
+    "sourceName": "서울시 생활체육포털",
+    "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=910",
+    "reservationUrl": null,
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "outdoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "서울시 생활체육포털",
+      "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=910"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/outdoor.svg",
+        "alt": "망원동 배드민턴장 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "seoul-mapo-wowsan-badminton",
+    "name": "와우산배드민턴장",
+    "region": "seoul",
+    "district": "마포구",
+    "address": "서울특별시 마포구 와우산로30길 87",
+    "phone": "02-6958-7126",
+    "courtCount": 9,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "휴게실"
+    ],
+    "hours": "주중 07:00-22:00 / 주말 07:00-22:00",
+    "parking": "주차 불가",
+    "source": "official",
+    "sourceName": "서울시 생활체육포털",
+    "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=918",
+    "reservationUrl": "https://mapogym.or.kr/215",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "outdoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "서울시 생활체육포털",
+      "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=918"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/outdoor.svg",
+        "alt": "와우산배드민턴장 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "seoul-seongdong-geumho-sports",
+    "name": "금호스포츠센터",
+    "region": "seoul",
+    "district": "성동구",
+    "address": "서울특별시 성동구 금호로 20",
+    "phone": "02-2204-7675",
+    "courtCount": 12,
+    "courtCountStatus": "confirmed",
+    "latitude": 37.5456152,
+    "longitude": 127.0251825,
+    "facilities": [
+      "샤워실",
+      "탈의실",
+      "개인사물함",
+      "스포츠용품점"
+    ],
+    "hours": "주중 06:00-22:00 / 주말 06:00-22:00",
+    "parking": "주차 가능 약 50면",
+    "source": "official",
+    "sourceName": "서울시 생활체육포털",
+    "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=1025",
+    "reservationUrl": "https://sports.happysd.or.kr/fmcs/123",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "서울시 생활체육포털",
+      "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=1025"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "금호스포츠센터 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "seoul-seongdong-daehyeonsan-gym",
+    "name": "대현산체육관",
+    "region": "seoul",
+    "district": "성동구",
+    "address": "서울특별시 성동구 독서당로63길 44",
+    "phone": "02-2204-7680",
+    "courtCount": 6,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "샤워실",
+      "탈의실",
+      "개인사물함"
+    ],
+    "hours": "주중 06:00-22:00 / 주말 06:00-22:00",
+    "parking": "인근 공영주차장 이용",
+    "source": "official",
+    "sourceName": "서울시 생활체육포털",
+    "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=1028",
+    "reservationUrl": "https://sports.happysd.or.kr/fmcs/146",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "서울시 생활체육포털",
+      "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=1028"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "대현산체육관 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "seoul-seongbuk-community-sports",
+    "name": "성북구민체육센터",
+    "region": "seoul",
+    "district": "성북구",
+    "address": "서울특별시 성북구 화랑로13길 144",
+    "phone": "02-2241-0651",
+    "courtCount": 0,
+    "courtCountStatus": "unknown",
+    "facilities": [
+      "샤워실",
+      "탈의실",
+      "휴게실",
+      "매점"
+    ],
+    "hours": "주중 05:30-22:00 / 토요일 05:30-17:00 / 일요일 휴관 / 공휴일 09:00-17:00",
+    "parking": "주차 가능 40면",
+    "source": "official",
+    "sourceName": "서울시 생활체육포털",
+    "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=938",
+    "reservationUrl": "https://www.gongdan.go.kr/portal/main/contents.do?menuNo=400116",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "서울시 생활체육포털",
+      "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=938"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "성북구민체육센터 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "seoul-seongbuk-wolgok-badminton",
+    "name": "월곡배드민턴장",
+    "region": "seoul",
+    "district": "성북구",
+    "address": "서울특별시 성북구 화랑로13길 130",
+    "phone": "02-2241-0661",
+    "courtCount": 9,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "샤워실",
+      "탈의실",
+      "관람석",
+      "배드민턴용품샵"
+    ],
+    "hours": "주중 06:00-21:30 / 토요일 08:30-21:30 / 일요일·공휴일 08:30-20:30",
+    "parking": "주차 공간 협소",
+    "source": "official",
+    "sourceName": "서울시 생활체육포털",
+    "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=939",
+    "reservationUrl": "https://www.gongdan.go.kr/portal/main/contents.do?menuNo=400116",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "서울시 생활체육포털",
+      "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=939"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "월곡배드민턴장 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "seoul-junggu-hunryeonwon-gym",
+    "name": "훈련원공원종합체육관",
+    "region": "seoul",
+    "district": "중구",
+    "address": "서울특별시 중구 을지로 227",
+    "phone": "02-2280-8397",
+    "courtCount": 0,
+    "courtCountStatus": "unknown",
+    "facilities": [
+      "샤워실",
+      "탈의실",
+      "개인사물함",
+      "관람석"
+    ],
+    "hours": "주중 06:00-22:00 / 주말·공휴일 06:00-22:00",
+    "parking": "5분당 400원",
+    "source": "official",
+    "sourceName": "서울시 생활체육포털",
+    "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=1177",
+    "reservationUrl": "https://www.e-junggu.or.kr/fmcs/301",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "서울시 생활체육포털",
+      "sourceUrl": "https://sports.seoul.go.kr/main/facilities/facilities_view.do?ft_idx=1177"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "훈련원공원종합체육관 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "gyeonggi-gapyeong-hanseokbong",
+    "name": "한석봉체육관",
+    "region": "gyeonggi",
+    "district": "가평군",
+    "address": "경기도 가평군 가평읍 문화로 131",
+    "phone": "031-8078-8310",
+    "courtCount": 12,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "배드민턴 코트",
+      "클라이밍",
+      "샤워실",
+      "락커룸"
+    ],
+    "hours": "평일 06:00-22:00 / 토요일 06:00-18:00 / 일요일·공휴일 휴관",
+    "parking": null,
+    "source": "official",
+    "sourceName": "가평군시설관리공단",
+    "sourceUrl": "https://www.gpfmc.or.kr/page/selectPage.do?muNo=500",
+    "reservationUrl": "https://www.gpfmc.or.kr/page/selectPage.do?muNo=500",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "가평군시설관리공단",
+      "sourceUrl": "https://www.gpfmc.or.kr/page/selectPage.do?muNo=500"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "한석봉체육관 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "gyeonggi-bucheon-badminton-gym",
+    "name": "부천 배드민턴 전용체육관",
+    "region": "gyeonggi",
+    "district": "부천시",
+    "address": "경기도 부천시 소사구 은성로2번길 6",
+    "phone": "032-340-5380",
+    "courtCount": 9,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "배드민턴장",
+      "휴게실",
+      "탈의실",
+      "샤워실",
+      "주차장"
+    ],
+    "hours": "평일 06:00-22:00 / 토요일 06:00-20:00 / 일요일·공휴일 07:00-19:00",
+    "parking": "주차장",
+    "source": "official",
+    "sourceName": "부천도시공사",
+    "sourceUrl": "https://www.best.or.kr/fmcs/246",
+    "reservationUrl": "https://www.best.or.kr/fmcs/246",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "부천도시공사",
+      "sourceUrl": "https://www.best.or.kr/fmcs/246"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "부천 배드민턴 전용체육관 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "gyeonggi-ansan-wadong-badminton",
+    "name": "와동배드민턴전용경기장",
+    "region": "gyeonggi",
+    "district": "안산시",
+    "address": "경기도 안산시 단원구 순환로 416",
+    "phone": "031-487-4901",
+    "courtCount": 10,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "배드민턴 코트",
+      "관람석",
+      "화장실",
+      "탈의실",
+      "주차장"
+    ],
+    "hours": "06:00-22:00",
+    "parking": "주차 가능 98대",
+    "source": "public",
+    "sourceName": "디지털안산문화대전",
+    "sourceUrl": "https://ansan.grandculture.net/ansan/toc/GC02501274",
+    "reservationUrl": null,
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "디지털안산문화대전",
+      "sourceUrl": "https://ansan.grandculture.net/ansan/toc/GC02501274"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "와동배드민턴전용경기장 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "gyeonggi-anseong-seoanseong-sports",
+    "name": "서안성체육센터",
+    "region": "gyeonggi",
+    "district": "안성시",
+    "address": "경기도 안성시 공도읍 용머리큰길 20",
+    "phone": "070-4271-7020",
+    "courtCount": 4,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "배드민턴 코트"
+    ],
+    "hours": "06:00-21:00",
+    "parking": null,
+    "source": "official",
+    "sourceName": "안성시시설관리공단",
+    "sourceUrl": "https://www.asmcs.or.kr/content.html?md=1129",
+    "reservationUrl": "https://www.asmcs.or.kr/content.html?md=1129",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "안성시시설관리공단",
+      "sourceUrl": "https://www.asmcs.or.kr/content.html?md=1129"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "서안성체육센터 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "gyeonggi-anseong-anseongmatchum",
+    "name": "안성맞춤공감센터 배드민턴장",
+    "region": "gyeonggi",
+    "district": "안성시",
+    "address": "경기도 안성시 장기로 107",
+    "phone": "031-678-6855",
+    "courtCount": 3,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "실내 배드민턴장"
+    ],
+    "hours": "월-목 10:00-22:00 / 금·토·일·공휴일 휴관",
+    "parking": null,
+    "source": "official",
+    "sourceName": "경기공유서비스",
+    "sourceUrl": "https://share.gg.go.kr/facilityListO/view?eshare=1&facilityId=F0143&instiCode=1230001",
+    "reservationUrl": "https://share.gg.go.kr/facilityListO/view?eshare=1&facilityId=F0143&instiCode=1230001",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "indoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "경기공유서비스",
+      "sourceUrl": "https://share.gg.go.kr/facilityListO/view?eshare=1&facilityId=F0143&instiCode=1230001"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/indoor.svg",
+        "alt": "안성맞춤공감센터 배드민턴장 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  },
+  {
+    "id": "gyeonggi-anseong-toemi-park",
+    "name": "퇴미공원 배드민턴장",
+    "region": "gyeonggi",
+    "district": "안성시",
+    "address": "경기도 안성시 공도읍 만정리 879",
+    "phone": "031-678-6867",
+    "courtCount": 4,
+    "courtCountStatus": "confirmed",
+    "facilities": [
+      "야외 배드민턴장"
+    ],
+    "hours": "06:00-21:00",
+    "parking": null,
+    "source": "official",
+    "sourceName": "경기공유서비스",
+    "sourceUrl": "https://share.gg.go.kr/facilityListO/view?eshare=1&facilityId=F0069&instiCode=1230001",
+    "reservationUrl": "https://share.gg.go.kr/facilityListO/view?eshare=1&facilityId=F0069&instiCode=1230001",
+    "updatedAt": "2026-05-13T00:00:00.000Z",
+    "venueType": "outdoor",
+    "feeInfo": {
+      "status": "unknown",
+      "summary": "요금 확인 필요",
+      "sourceName": "경기공유서비스",
+      "sourceUrl": "https://share.gg.go.kr/facilityListO/view?eshare=1&facilityId=F0069&instiCode=1230001"
+    },
+    "photos": [
+      {
+        "url": "/court-covers/outdoor.svg",
+        "alt": "퇴미공원 배드민턴장 대표 이미지",
+        "sourceName": "민턴맵 기본 커버",
+        "sourceUrl": null,
+        "isPrimary": true
+      }
+    ]
+  }
+]

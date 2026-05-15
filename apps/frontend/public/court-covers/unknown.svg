@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-label="Badminton court cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#475569"/>
+      <stop offset=".5" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#ff385c"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <path d="M0 318h640v162H0z" fill="#111827" opacity=".32"/>
+  <path d="M70 338h500v104H70zM320 338v104M70 390h500" fill="none" stroke="#fff" stroke-width="7" opacity=".86"/>
+  <path d="M190 160l72 72M262 160l-72 72" stroke="#fff" stroke-width="14" stroke-linecap="round" opacity=".86"/>
+  <circle cx="448" cy="180" r="58" fill="#fff" opacity=".14"/>
+  <text x="40" y="72" fill="#fff" font-family="Arial, sans-serif" font-size="34" font-weight="700">Badminton Court</text>
+</svg>

@@ -1,0 +1,29 @@
+{
+  "name": "mintonmap",
+  "version": "0.1.0",
+  "private": true,
+  "description": "민턴맵 MVP - 서울/수도권/경기도 배드민턴 코트 지도",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm run dev --workspace @mintonmap/backend\" \"npm run dev --workspace @mintonmap/frontend\"",
+    "dev:backend": "npm run dev --workspace @mintonmap/backend",
+    "dev:frontend": "npm run dev --workspace @mintonmap/frontend",
+    "build": "npm run build --workspaces",
+    "data:geocode": "node scripts/geocode-courts.mjs",
+    "data:import:seoul": "node scripts/import-seoul-sports-courts.mjs",
+    "data:import:kspo": "node scripts/import-kspo-workout-csv.mjs",
+    "data:import:kakao": "node scripts/import-kakao-local-courts.mjs",
+    "data:photos": "node scripts/enrich-court-photos.mjs",
+    "data:dedupe": "node scripts/dedupe-courts.mjs",
+    "data:refresh": "npm run data:import:seoul && npm run data:import:kspo && npm run data:photos && npm run data:dedupe",
+    "db:migrate": "node scripts/migrate-postgres.mjs",
+    "db:seed": "node scripts/seed-postgres.mjs",
+    "typecheck": "npm run typecheck --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "typescript": "^6.0.3"
+  }
+}

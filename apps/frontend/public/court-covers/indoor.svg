@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-label="Indoor badminton court cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#075985"/>
+      <stop offset="0.56" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#ef4444"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <path d="M0 315h640v165H0z" fill="url(#floor)" opacity=".9"/>
+  <path d="M60 335h520v110H60z" fill="none" stroke="#fff" stroke-width="8" opacity=".9"/>
+  <path d="M320 335v110M60 390h520" stroke="#fff" stroke-width="5" opacity=".75"/>
+  <path d="M70 138h500M105 96h430M150 62h340" stroke="#fff" stroke-width="6" opacity=".18"/>
+  <circle cx="500" cy="155" r="46" fill="#fff" opacity=".14"/>
+  <path d="M180 202l74 74M254 202l-74 74" stroke="#fff" stroke-width="14" stroke-linecap="round" opacity=".9"/>
+  <path d="M390 207c33 12 54 39 54 70 0 43-40 78-90 78s-90-35-90-78c0-31 21-58 54-70" fill="none" stroke="#fff" stroke-width="10" opacity=".32"/>
+  <text x="40" y="72" fill="#fff" font-family="Arial, sans-serif" font-size="34" font-weight="700">Indoor Court</text>
+</svg>

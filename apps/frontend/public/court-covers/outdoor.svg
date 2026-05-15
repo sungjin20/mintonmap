@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-label="Outdoor badminton court cover">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset=".55" stop-color="#a7f3d0"/>
+      <stop offset="1" stop-color="#166534"/>
+    </linearGradient>
+    <linearGradient id="court" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16a34a"/>
+      <stop offset="1" stop-color="#84cc16"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#sky)"/>
+  <circle cx="520" cy="82" r="52" fill="#fef3c7"/>
+  <path d="M0 265c100-44 192-45 278-5 89 41 189 33 362-25v245H0z" fill="#14532d" opacity=".36"/>
+  <path d="M55 305h530v135H55z" fill="url(#court)" opacity=".92"/>
+  <path d="M85 325h470v95H85zM320 325v95M85 373h470" fill="none" stroke="#fff" stroke-width="7" opacity=".9"/>
+  <path d="M70 300c54-54 91-86 130-86 51 0 83 53 130 53 50 0 70-58 126-58 44 0 78 34 116 80" fill="none" stroke="#064e3b" stroke-width="18" opacity=".3"/>
+  <path d="M453 147l28 48 55 12-37 42 5 57-52-23-53 23 6-57-38-42 55-12z" fill="#fff" opacity=".18"/>
+  <text x="40" y="72" fill="#064e3b" font-family="Arial, sans-serif" font-size="34" font-weight="700">Outdoor Court</text>
+</svg>
