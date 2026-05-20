@@ -110,11 +110,16 @@ jobs:
               exit 1
             fi
 
+            DEPLOY_GROUP="$(id -gn)"
+            sudo chown root:"$DEPLOY_GROUP" /etc/mintonmap/backend.env
+            sudo chmod 640 /etc/mintonmap/backend.env
+
             rm -rf /opt/mintonmap/backend /opt/mintonmap/frontend
             mv /tmp/mintonmap-deploy/backend /opt/mintonmap/backend
             mv /tmp/mintonmap-deploy/frontend /opt/mintonmap/frontend
 
             ln -sfn /etc/mintonmap/backend.env /opt/mintonmap/backend/apps/backend/.env
+            test -r /opt/mintonmap/backend/apps/backend/.env
 
             cd /opt/mintonmap/backend
 
