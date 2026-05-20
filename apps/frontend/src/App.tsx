@@ -4,6 +4,7 @@ import { KakaoMap } from "./components/KakaoMap";
 import type { BadmintonCourt, CourtVenueType, RegionFilter } from "./types/court";
 
 type VenueFilter = "all" | CourtVenueType;
+type QuickFilter = "reservable" | "knownFee" | "parking" | "confirmedCount" | "openAllDay";
 
 const regionLabels: Record<RegionFilter, string> = {
   all: "전체",
@@ -18,6 +19,14 @@ const venueLabels: Record<VenueFilter, string> = {
   outdoor: "실외",
   mixed: "실내/실외",
   unknown: "확인 필요"
+};
+
+const quickFilterLabels: Record<QuickFilter, string> = {
+  reservable: "예약 링크",
+  knownFee: "요금 확인",
+  parking: "주차 가능",
+  confirmedCount: "코트 수 확인",
+  openAllDay: "상시 개방"
 };
 
 function formatCourtCount(court: BadmintonCourt) {
@@ -88,11 +97,36 @@ function getHighlight(court: BadmintonCourt) {
   return "방문 확인";
 }
 
+function hasParking(court: BadmintonCourt) {
+  const parking = normalizeDisplay(court.parking);
+
+  if (!parking || parking === "-" || /불가|없음|별도의 주차 시설 없음/.test(parking)) {
+    return false;
+  }
+
+  return /주차 가능|주차장|주차 무료|주차면수|주차 공간/.test(parking);
+}
+
+function isOpenAllDay(court: BadmintonCourt) {
+  return /00:00~24:00/.test(court.hours ?? "");
+}
+
+function matchesQuickFilter(court: BadmintonCourt, filter: QuickFilter) {
+  if (filter === "reservable") return Boolean(getRelatedSiteUrl(court));
+  if (filter === "knownFee") return court.feeInfo?.status === "known";
+  if (filter === "parking") return hasParking(court);
+  if (filter === "confirmedCount") return court.courtCountStatus !== "unknown" && court.courtCount > 0;
+  if (filter === "openAllDay") return isOpenAllDay(court);
+
+  return true;
+}
+
 function App() {
   const [courts, setCourts] = useState<BadmintonCourt[]>([]);
   const [selectedCourtId, setSelectedCourtId] = useState<string>();
   const [regionFilter, setRegionFilter] = useState<RegionFilter>("all");
   const [venueFilter, setVenueFilter] = useState<VenueFilter>("all");
+  const [quickFilters, setQuickFilters] = useState<QuickFilter[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string>();
@@ -116,7 +150,11 @@ function App() {
       incheon: courts.filter((court) => court.region === "incheon").length,
       indoor: courts.filter((court) => court.venueType === "indoor").length,
       outdoor: courts.filter((court) => court.venueType === "outdoor").length,
-      knownFee: courts.filter((court) => court.feeInfo?.status === "known").length
+      knownFee: courts.filter((court) => court.feeInfo?.status === "known").length,
+      reservable: courts.filter((court) => getRelatedSiteUrl(court)).length,
+      parking: courts.filter(hasParking).length,
+      confirmedCount: courts.filter((court) => court.courtCountStatus !== "unknown" && court.courtCount > 0).length,
+      openAllDay: courts.filter(isOpenAllDay).length
     }),
     [courts]
   );
@@ -132,15 +170,16 @@ function App() {
     return courts.filter((court) => {
       const matchesRegion = regionFilter === "all" || court.region === regionFilter;
       const matchesVenue = venueFilter === "all" || court.venueType === venueFilter;
+      const matchesQuickFilters = quickFilters.every((filter) => matchesQuickFilter(court, filter));
       const matchesSearch =
         !normalizedSearch ||
         court.name.toLowerCase().includes(normalizedSearch) ||
         court.address.toLowerCase().includes(normalizedSearch) ||
         court.district?.toLowerCase().includes(normalizedSearch);
 
-      return matchesRegion && matchesVenue && matchesSearch;
+      return matchesRegion && matchesVenue && matchesQuickFilters && matchesSearch;
     });
-  }, [courts, regionFilter, searchTerm, venueFilter]);
+  }, [courts, quickFilters, regionFilter, searchTerm, venueFilter]);
 
   const selectedCourt = selectedCourtId
     ? filteredCourts.find((court) => court.id === selectedCourtId)
@@ -155,6 +194,21 @@ function App() {
 
   const handleClearSelection = useCallback(() => {
     setSelectedCourtId(undefined);
+  }, []);
+
+  const handleToggleQuickFilter = useCallback((filter: QuickFilter) => {
+    setQuickFilters((currentFilters) =>
+      currentFilters.includes(filter)
+        ? currentFilters.filter((currentFilter) => currentFilter !== filter)
+        : [...currentFilters, filter]
+    );
+  }, []);
+
+  const handleResetFilters = useCallback(() => {
+    setRegionFilter("all");
+    setVenueFilter("all");
+    setQuickFilters([]);
+    setSearchTerm("");
   }, []);
 
   useEffect(() => {
@@ -209,6 +263,32 @@ function App() {
               </button>
             ))}
           </div>
+
+          <div className="quick-filter-block">
+            <div className="filter-heading">
+              <span>빠른 조건</span>
+              {(searchTerm || regionFilter !== "all" || venueFilter !== "all" || quickFilters.length > 0) && (
+                <button type="button" className="reset-filter" onClick={handleResetFilters}>
+                  초기화
+                </button>
+              )}
+            </div>
+            <div className="chip-row" role="group" aria-label="빠른 조건 필터">
+              {(["reservable", "knownFee", "parking", "confirmedCount", "openAllDay"] as QuickFilter[]).map(
+                (filter) => (
+                  <button
+                    key={filter}
+                    type="button"
+                    className={quickFilters.includes(filter) ? "chip active" : "chip"}
+                    onClick={() => handleToggleQuickFilter(filter)}
+                  >
+                    {quickFilterLabels[filter]}
+                    <span>{counts[filter]}</span>
+                  </button>
+                )
+              )}
+            </div>
+          </div>
         </section>
 
         <section className="stats-grid" aria-label="등록 코트 현황">
@@ -246,6 +326,7 @@ function App() {
               <button
                 key={court.id}
                 type="button"
+                aria-pressed={court.id === selectedCourt?.id}
                 className={court.id === selectedCourt?.id ? "court-card active" : "court-card"}
                 onClick={() => handleSelectCourt(court)}
               >

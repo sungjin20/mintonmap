@@ -30,6 +30,19 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Check deploy SSH connectivity
+        env:
+          SCP_HOST: ${{ secrets.SCP_HOST }}
+          SCP_PORT: ${{ secrets.SCP_PORT || '22' }}
+        run: |
+          if [ -z "$SCP_HOST" ]; then
+            echo "SCP_HOST secret is empty."
+            exit 1
+          fi
+
+          echo "Checking SSH connectivity to deploy host..."
+          nc -vz -w 10 "$SCP_HOST" "$SCP_PORT"
+
       - name: Prepare backend artifact
         run: |
           mkdir -p deploy/backend
@@ -51,11 +64,12 @@ jobs:
           host: ${{ secrets.SCP_HOST }}
           username: ${{ secrets.SCP_USER }}
           key: ${{ secrets.SCP_SSH_KEY }}
-          port: ${{ secrets.SCP_PORT }}
+          port: ${{ secrets.SCP_PORT || '22' }}
           source: "deploy/backend/*"
           target: "/tmp/mintonmap-deploy/backend"
           strip_components: 2
           rm: true
+          timeout: 60s
 
       - name: Upload frontend artifact
         uses: appleboy/scp-action@v0.1.7
@@ -63,11 +77,12 @@ jobs:
           host: ${{ secrets.SCP_HOST }}
           username: ${{ secrets.SCP_USER }}
           key: ${{ secrets.SCP_SSH_KEY }}
-          port: ${{ secrets.SCP_PORT }}
+          port: ${{ secrets.SCP_PORT || '22' }}
           source: "deploy/frontend/*"
           target: "/tmp/mintonmap-deploy/frontend"
           strip_components: 2
           rm: true
+          timeout: 60s
 
       - name: Activate deployment
         uses: appleboy/ssh-action@v1.2.0
@@ -75,7 +90,8 @@ jobs:
           host: ${{ secrets.SCP_HOST }}
           username: ${{ secrets.SCP_USER }}
           key: ${{ secrets.SCP_SSH_KEY }}
-          port: ${{ secrets.SCP_PORT }}
+          port: ${{ secrets.SCP_PORT || '22' }}
+          timeout: 60s
           script_stop: true
           script: |
             set -e

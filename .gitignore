@@ -18,8 +18,11 @@ yarn-error.log*
 pnpm-debug.log*
 *-dev.log
 *-dev.err.log
+backend-*.log
+backend-*.err.log
 dev-server.log
 dev-server.err.log
 
 .DS_Store
 Thumbs.db
+mintonmap-keypair.pem
