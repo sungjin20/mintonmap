@@ -46,17 +46,17 @@ button {
   flex-direction: column;
   min-width: 0;
   min-height: 0;
-  gap: 18px;
+  gap: 12px;
   border-right: 1px solid #e8e1d9;
   background: #fffdf9;
-  padding: 22px;
+  padding: 18px;
   overflow: hidden;
 }
 
 .brand-block {
   display: grid;
   grid-template-columns: 54px minmax(0, 1fr);
-  gap: 14px;
+  gap: 12px;
   align-items: center;
 }
 
@@ -105,20 +105,22 @@ h3 {
 }
 
 .brand-block p:last-child {
-  margin-top: 6px;
+  margin-top: 4px;
   color: #697586;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 .search-panel {
   display: grid;
-  gap: 12px;
+  gap: 10px;
   border: 1px solid #eadfd6;
   border-radius: 8px;
   background: #ffffff;
-  padding: 14px;
+  padding: 12px;
   box-shadow: 0 10px 28px rgb(15 23 42 / 7%);
+  max-height: min(44vh, 420px);
+  overflow-y: auto;
 }
 
 .search-panel label {
@@ -236,20 +238,20 @@ h3 {
   border: 1px solid #ece6df;
   border-radius: 8px;
   background: #ffffff;
-  padding: 12px;
+  padding: 10px;
 }
 
 .stats-grid span {
   display: block;
   color: #111827;
-  font-size: 23px;
+  font-size: 21px;
   font-weight: 900;
   line-height: 1;
 }
 
 .stats-grid small {
   display: block;
-  margin-top: 6px;
+  margin-top: 4px;
   color: #697586;
   font-size: 12px;
   font-weight: 700;
@@ -260,8 +262,9 @@ h3 {
   grid-template-rows: auto minmax(0, 1fr);
   flex: 1 1 auto;
   min-height: 0;
-  gap: 12px;
+  gap: 8px;
   overflow: hidden;
+  margin-top: -4px;
 }
 
 .section-heading {
@@ -289,10 +292,48 @@ h3 {
 .court-list-items {
   display: grid;
   align-content: start;
-  gap: 12px;
+  gap: 10px;
   min-height: 0;
   overflow-y: auto;
   padding-right: 4px;
+}
+
+@media (max-height: 940px) {
+  .sidebar {
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .brand-block p:last-child {
+    display: none;
+  }
+
+  .search-panel {
+    gap: 8px;
+    padding: 10px;
+    max-height: min(40vh, 360px);
+  }
+
+  .search-panel input {
+    min-height: 42px;
+  }
+
+  .chip {
+    min-height: 31px;
+    font-size: 12px;
+  }
+
+  .stats-grid div {
+    padding: 8px;
+  }
+
+  .stats-grid span {
+    font-size: 18px;
+  }
+
+  .court-list-items {
+    gap: 8px;
+  }
 }
 
 .court-card {
