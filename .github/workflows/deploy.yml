@@ -28,6 +28,9 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          VITE_KAKAO_MAP_APP_KEY: ${{ secrets.VITE_KAKAO_MAP_APP_KEY }}
+          VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL || '' }}
         run: npm run build
 
       - name: Check deploy SSH connectivity
@@ -96,19 +99,22 @@ jobs:
           script: |
             set -e
 
-            mkdir -p /opt/mintonmap/backend/apps/backend /opt/mintonmap/frontend
-            if [ -f /opt/mintonmap/backend/apps/backend/.env ]; then
-              cp /opt/mintonmap/backend/apps/backend/.env /tmp/mintonmap-backend.env
+            sudo mkdir -p /etc/mintonmap
+            if [ ! -f /etc/mintonmap/backend.env ] && [ -f /opt/mintonmap/backend/apps/backend/.env ]; then
+              sudo cp /opt/mintonmap/backend/apps/backend/.env /etc/mintonmap/backend.env
+            fi
+
+            if [ ! -f /etc/mintonmap/backend.env ]; then
+              echo "/etc/mintonmap/backend.env is missing."
+              echo "Create it once on the server before deploying."
+              exit 1
             fi
 
             rm -rf /opt/mintonmap/backend /opt/mintonmap/frontend
             mv /tmp/mintonmap-deploy/backend /opt/mintonmap/backend
             mv /tmp/mintonmap-deploy/frontend /opt/mintonmap/frontend
 
-            if [ -f /tmp/mintonmap-backend.env ]; then
-              mkdir -p /opt/mintonmap/backend/apps/backend
-              mv /tmp/mintonmap-backend.env /opt/mintonmap/backend/apps/backend/.env
-            fi
+            ln -sfn /etc/mintonmap/backend.env /opt/mintonmap/backend/apps/backend/.env
 
             cd /opt/mintonmap/backend
 
